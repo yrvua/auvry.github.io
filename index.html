@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">☰ Menu</button>
+            <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation menu">☰ Menu</button>
             <ul id="main-menu" role="navigation" aria-label="Main navigation" class="hidden">
                 <li><a href="#home" aria-label="Go to Home Section">Home</a></li>
                 <li><a href="#about" aria-label="Go to About Section">About</a></li>
@@ -27,7 +27,7 @@
                 <p>Here, I blend technology and imagination to craft digital experiences that resonate.</p>
                 <p>Curious to learn more about my adventures in web development?</p>
                 <p>Dive deeper into my portfolio!</p>
-                <button onclick="location.href='#about'" class="know-more-btn">Explore More</button>
+                <button onclick="location.href='#about'" class="know-more-btn" aria-label="Explore more about Auvry">Explore More</button>
             </div>
         </section>
         <section id="about" tabindex="-1">
@@ -39,8 +39,8 @@
                     <h2>About Me</h2>
                     <p>Welcome to my personal portfolio! I am Auvry E. Saquitan, a dedicated Computer Science student with a deep passion for technology and innovation. My academic journey and hands-on projects have equipped me with robust skills in HTML, CSS, JavaScript, and a keen interest in emerging web technologies. I thrive on challenges and am constantly seeking opportunities to apply my skills in real-world scenarios, aiming to make a meaningful impact through my work. Explore my projects to see how I use my technical expertise to solve problems and create value.</p>
                     <br>
-                    <p>To know more about me, you can download my resume to gain insights into my educational background and general skills , enhancing your understanding of my personal qualities.</p>
-                    <a href="auvry_resume.pdf" class="download-btn" aria-label="Download my resume" download>Download Resume</a>
+                    <p>To know more about me, you can download my resume to gain  insights into my educational background and general skills, enhancing your understanding of my personal qualities</p>
+                    <a href="#" id="downloadResume" class="download-btn" aria-label="Download Auvry's resume">Download Resume</a>
                 </div>
             </div>
         </section>
@@ -81,22 +81,32 @@
                 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required aria-required="true"></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit" aria-label="Send your message">Send Message</button>
             </form>
             <div class="social-links">
                 <a href="mailto:auvrysaquitan@gmail.com" aria-label="Send Email via Gmail">
-                    <img src="gmail.png" alt="Gmail">
+                    <img src="gmail.png" alt="Gmail icon">
                 </a>
-                <a href="https://github.com/yrvua" aria-label="GitHub Profile">
-                    <img src="github.png" alt="GitHub">
+                <a href="https://github.com/yrvua" aria-label="Visit Auvry's GitHub Profile">
+                    <img src="github.png" alt="GitHub icon">
                 </a>
-                <a href="https://www.facebook.com/auvry.saquitan" aria-label="Facebook Profile">
-                    <img src="facebook.png" alt="Facebook">
+                <a href="https://www.facebook.com/auvry.saquitan" aria-label="Visit Auvry's Facebook Profile">
+                    <img src="facebook.png" alt="Facebook icon">
                 </a>
             </div>
         </section>
     </main>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var downloadLink = document.getElementById('downloadResume');
+            if (downloadLink) {
+                downloadLink.href = 'auvry resume.pdf';  
+                console.log('Resume link set correctly.');
+            } else {
+                console.log('Error: Download link element not found.');
+            }
+        });
+
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             var menu = document.getElementById('main-menu');
             var expanded = this.getAttribute('aria-expanded') === 'true' || false;
