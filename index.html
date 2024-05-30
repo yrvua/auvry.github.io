@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auvry's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">☰ Menu</button>
+            <ul id="main-menu" role="navigation" aria-label="Main navigation" class="hidden">
+                <li><a href="#home" aria-label="Go to Home Section">Home</a></li>
+                <li><a href="#about" aria-label="Go to About Section">About</a></li>
+                <li><a href="#projects" aria-label="Go to Projects Section">Projects</a></li>
+                <li><a href="#contact" aria-label="Go to Contact Section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" tabindex="-1">
+            <div class="home-content">
+                <h1>Hello and Welcome to My Portfolio!</h1>
+                <br>
+                <p>Embark on a journey through my world of coding and creativity.</p>
+                <p>Here, I blend technology and imagination to craft digital experiences that resonate.</p>
+                <p>Curious to learn more about my adventures in web development?</p>
+                <p>Dive deeper into my portfolio!</p>
+                <button onclick="location.href='#about'" class="know-more-btn">Explore More</button>
+            </div>
+        </section>
+        <section id="about" tabindex="-1">
+            <div class="about-content">
+                <div class="profile-pic-container">
+                    <img src="obri.jpeg" alt="Portrait of Auvry E. Saquitan" class="profile-pic">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Welcome to my personal portfolio! I am Auvry E. Saquitan, a dedicated Computer Science student with a deep passion for technology and innovation. My academic journey and hands-on projects have equipped me with robust skills in HTML, CSS, JavaScript, and a keen interest in emerging web technologies. I thrive on challenges and am constantly seeking opportunities to apply my skills in real-world scenarios, aiming to make a meaningful impact through my work. Explore my projects to see how I use my technical expertise to solve problems and create value.</p>
+                    <br>
+                    <p>To know more about me, you can download my resume to gain insights into my educational background and general skills , enhancing your understanding of my personal qualities.</p>
+                    <a href="auvry_resume.pdf" class="download-btn" aria-label="Download my resume" download>Download Resume</a>
+                </div>
+            </div>
+        </section>
+        <section id="projects" tabindex="-1" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div class="grid">
+                <div class="card" tabindex="0" aria-label="Project 1: Basic Web Template">
+                    <img src="project1.jpeg" alt="Screenshot of Project 1">
+                    <div class="card-content">
+                        <h3>Project 1: Basic Web Template</h3>
+                        <p>The Basic Web Template offers a straightforward, clean design for building simple and effective websites. It's perfect for personal projects, small business sites, or any scenario where ease of use and basic functionality are key priorities.</p>
+                    </div>
+                </div>
+                <div class="card" tabindex="0" aria-label="Project 2: Responsive Schedule Table">
+                    <img src="project2.jpeg" alt="Screenshot of Project 2">
+                    <div class="card-content">
+                        <h3>Project 2: Responsive Schedule Table</h3>
+                        <p>The Responsive Schedule Table was an academic exercise assigned by my professor to demonstrate our ability to code structured layouts. This project involved creating a visually appealing and functional display of a schedule, designed to be responsive and easy to read. It was a valuable opportunity to apply classroom theories in practical scenarios, enhancing my understanding of web development techniques.</p>
+                    </div>
+                </div>
+                <div class="card" tabindex="0" aria-label="Project 3: Secure Login & Registration">
+                    <img src="project3.jpeg" alt="Screenshot of Project 3">
+                    <div class="card-content">
+                        <h3>Project 3: Secure Login & Registration</h3>
+                        <p>The Secure Login & Registration System project focuses on the design and development of two critical components for any website: the login and registration pages. This project showcases the ability to create user-friendly, secure, and visually appealing interfaces that facilitate easy and safe user access and onboarding.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" tabindex="-1">
+            <h2>Contact</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true">
+               
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required aria-required="true"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="mailto:auvrysaquitan@gmail.com" aria-label="Send Email via Gmail">
+                    <img src="gmail.png" alt="Gmail">
+                </a>
+                <a href="https://github.com/yrvua" aria-label="GitHub Profile">
+                    <img src="github.png" alt="GitHub">
+                </a>
+                <a href="https://www.facebook.com/auvry.saquitan" aria-label="Facebook Profile">
+                    <img src="facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('main-menu');
+            var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background: #C7B8A5; /* Soft beige for the main background */
+}
+
+/* Navigation Styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #444623; /* Dark moss green for navigation */
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #C7B8A5; /* Soft beige for text */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    color: #626C1F; /* Deep olive green for hover state */
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 10px; /* Ensures the menu toggle is visible and accessible */
+        top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background: #444623;
+        top: 48px;
+        left: 0;
+        display: none; /* Initially hidden */
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul.hidden {
+        display: none;
+    }
+}
+
+/* Section Styles */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    color: #444623; /* Dark moss green for text */
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #887966; /* Muted brown as a subtle separator */
+}
+
+/* Home Section with Background Image */
+#home {
+    background-image: url('home.jpeg'); /* Update with your actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FCFBF1; /* Light cream for text for better visibility */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Vertically center the content */
+    justify-content: center; /* Align content to the left */
+    text-align: left; /* Align text to the left */
+    padding-left: 70px; /* Add some padding on the left for spacing */
+    height: 100vh;
+}
+
+/* About Section Layout */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.profile-pic-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+}
+
+.profile-pic-container img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+.about-text {
+    flex: 2;
+    text-align: left;
+    padding-left: 50px;
+}
+
+/* Projects Grid and Card Styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Center align the items horizontally */
+}
+
+.card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%; /* Responsive card width */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+.card:focus {
+    outline: 3px solid blue;
+}
+
+/* Button Styles */
+button, .download-btn, .know-more-btn {
+    padding: 12px 25px;
+    background-color: #626C1F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, .download-btn:hover, .know-more-btn:hover {
+    background-color: #444623;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Form Styles */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+/* Social Links Styles */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    background-color: #555555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+    background-color: #333333;
+    transform: scale(1.1);
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+}
