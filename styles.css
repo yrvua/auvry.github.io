@@ -57,7 +57,7 @@ nav a:hover {
     .menu-toggle {
         display: block;
         position: absolute;
-        right: 10px; /* Ensures the menu toggle is visible and accessible */
+        right: 10px;
         top: 10px;
     }
 
@@ -68,7 +68,7 @@ nav a:hover {
         background: #444623;
         top: 48px;
         left: 0;
-        display: none; /* Initially hidden */
+        display: none;
     }
 
     nav ul li {
@@ -77,7 +77,7 @@ nav a:hover {
     }
 
     nav ul.hidden {
-        display: none;
+        display: flex;
     }
 }
 
@@ -89,26 +89,10 @@ section {
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    color: #444623; /* Dark moss green for text */
+    color: #444623;
     padding: 20px;
     box-sizing: border-box;
-    border-bottom: 1px solid #887966; /* Muted brown as a subtle separator */
-}
-
-/* Home Section with Background Image */
-#home {
-    background-image: url('home.jpeg'); /* Update with your actual image URL */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #FCFBF1; /* Light cream for text for better visibility */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Vertically center the content */
-    justify-content: center; /* Align content to the left */
-    text-align: left; /* Align text to the left */
-    padding-left: 70px; /* Add some padding on the left for spacing */
-    height: 100vh;
+    border-bottom: 1px solid #887966;
 }
 
 /* About Section Layout */
@@ -129,9 +113,8 @@ section {
 }
 
 .profile-pic-container img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    max-width: 300px;
 }
 
 .about-text {
@@ -140,14 +123,82 @@ section {
     padding-left: 50px;
 }
 
-/* Projects Grid and Card Styles */
-.grid {
+@media (max-width: 768px) {
+    .about-content {
+        display: grid;
+        grid-template-areas:
+            "title"
+            "picture"
+            "description"
+            "resume";
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .profile-pic-container, .about-text {
+        padding-right: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .profile-pic-container img {
+        max-width: 200px;
+    }
+
+    .about-title {
+        grid-area: title;
+    }
+
+    .profile-pic-container {
+        grid-area: picture;
+    }
+
+    .about-text {
+        grid-area: description;
+    }
+
+    .download-btn-container {
+        grid-area: resume;
+    }
+}
+
+/* Additional Styles for Other Sections and Elements */
+/* Home Section with Background Image */
+#home {
+    background-image: url('home.jpeg'); /* Update with your actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #FCFBF1; /* Light cream for text for better visibility */
     display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Vertically center the content */
+    justify-content: center; /* Align content to the left */
+    text-align: left; /* Align text to the left */
+    padding-left: 70px; /* Add some padding on the left for spacing */
+    height: 100vh;
+}
+
+/* Projects Grid and Card Styles */
+.container {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%; /* Adjust height as necessary */
+}
+
+.grid {
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    grid-auto-rows: minmax(200px, auto); /* Adjust row height as needed */
     gap: 20px;
     padding: 20px;
-    justify-items: center; /* Center align the items horizontally */
+    justify-content: center; /* Ensures content is centered horizontally when fewer items */
+    align-content: center; /* Centers the grid items vertically in the grid container */
+    width: 100%; /* Full width to ensure it takes up the container space */
+    max-width: 1200px; /* Maximum width can be adjusted based on design requirements */
+    margin: 0 auto; /* Centers the grid in the parent container */
 }
 
 .card {
@@ -156,18 +207,21 @@ section {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 100%; /* Responsive card width */
-    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content inside is spaced evenly */
+    height: 100%; /* Takes full height of the grid row */
 }
 
 .card img {
     width: 100%;
-    height: auto;
+    height: auto; /* Ensures image scales correctly */
     display: block;
 }
 
 .card-content {
     padding: 15px;
+    flex: 1; /* Allows content to fill available space */
 }
 
 .card-content h3 {
@@ -175,7 +229,7 @@ section {
 }
 
 .card:focus {
-    outline: 3px solid blue;
+    outline: 3px solid blue; /* Ensures focus is clearly visible for accessibility */
 }
 
 /* Button Styles */
