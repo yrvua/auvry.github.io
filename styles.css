@@ -53,7 +53,7 @@ nav a:hover {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 468px) {
     .menu-toggle {
         display: block;
         position: absolute;
