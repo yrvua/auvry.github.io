@@ -142,7 +142,8 @@ section {
 
 /* Projects Grid and Card Styles */
 .grid {
-    display: grid;
+    display: flex;
+    align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
     gap: 20px;
     padding: 20px;
@@ -156,6 +157,7 @@ section {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 100%; /* Responsive card width */
+    height: 600px;
 }
 
 .card img {
